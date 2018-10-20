@@ -47,5 +47,7 @@ public class Deck {
           AddCard(c);
       }
   }
-  
+  public Iterable<Card> ShowHand() {
+	  return m_cards;
+  }
 }
