@@ -32,9 +32,9 @@ public class Game {
     return m_dealer.Hit(m_player);
   }
   
-  public boolean Stand()
+  public void Stand()
   {
-    return m_dealer.Stand();
+    m_dealer.Stand();
   }
   
   public Iterable<Card> GetDealerHand()

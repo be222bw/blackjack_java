@@ -57,7 +57,7 @@ public class Dealer extends Player {
     }
     return false;
   }
-  public boolean Stand() {
+  public void Stand() {
 	  if (m_deck != null) {
 		  ShowHand();
 		  
@@ -67,6 +67,5 @@ public class Dealer extends Player {
 			  DealCard(c);
 		  }
 	  }
-	  return true;
   }
 }
