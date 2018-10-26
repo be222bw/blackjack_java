@@ -10,13 +10,16 @@ public class Soft17HitStrategy implements IHitStrategy {
 	public boolean DoHit(Player a_dealer) {
 		int score = 0;
 		boolean hasAce = false;
+		int cardScores[] = {
+		        2, 3, 4, 5, 6, 7, 8, 9, 10, 10 ,10 ,10, 11
+		    };
 		for (Card c : a_dealer.GetHand()) {
 			c.Show(true);
 			if (!hasAce && c.GetValue() == Card.Value.Ace) {
 				hasAce = true;
 				score++;
-			} else if (c.GetValue() == Card.Value.Hidden); /* No-op */ else {
-				score += c.GetValue().ordinal();
+			} else {
+				score += cardScores[c.GetValue().ordinal()];
 			}
 		}
 		return (hasAce && score == 7) || a_dealer.CalcScore() < g_hitLimit;

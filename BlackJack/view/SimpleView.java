@@ -18,8 +18,10 @@ public class SimpleView implements IView
               c = System.in.read();
               switch (c) {
               case 'h':
+              case 'H':
             	  return Action.Hit;
               case 'p':
+              case 'P':
             	  return Action.Play;
               case 's':
               case 'S':
