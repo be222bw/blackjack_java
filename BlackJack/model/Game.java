@@ -34,8 +34,7 @@ public class Game {
   
   public boolean Stand()
   {
-    m_dealer.Stand();
-    return true;
+    return m_dealer.Stand();
   }
   
   public Iterable<Card> GetDealerHand()

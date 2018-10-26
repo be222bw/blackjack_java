@@ -58,7 +58,6 @@ public class Dealer extends Player {
     return false;
   }
   public boolean Stand() {
-	  boolean success = false;
 	  if (m_deck != null) {
 		  ShowHand();
 		  
@@ -70,10 +69,8 @@ public class Dealer extends Player {
 			  Card c = m_deck.GetCard();
 			  c.Show(true);
 			  DealCard(c);
-			  success = m_hand.add(c);
 		  }
-		  
-  }
-	  return success;
+	  }
+	  return true;
   }
 }
