@@ -1,6 +1,7 @@
 package BlackJack.controller;
 
 import BlackJack.view.IView;
+import BlackJack.view.Action;
 import BlackJack.model.Game;
 
 public class PlayGame {
@@ -16,22 +17,22 @@ public class PlayGame {
         a_view.DisplayGameOver(a_game.IsDealerWinner());
     }
 
-    int input = a_view.GetInput();
+    Action input = a_view.GetInput();
     
     switch (input) {
-    case 'p':
+    case Play:
     	a_game.NewGame();
     	break;
-    case 'h':
+    case Hit:
     	a_game.Hit();
     	break;
-    case 's':
+    case Stand:
     	a_game.Stand();
     	break;
     default:
     		break;
     }
     
-    return input != 'q';
+    return input != Action.Quit;
   }
 }
