@@ -61,10 +61,6 @@ public class Dealer extends Player {
 	  if (m_deck != null) {
 		  ShowHand();
 		  
-		  for (Card c : GetHand()) {
-			  c.Show(true);
-		  }
-		  
 		  while (m_hitRule.DoHit(this)) {
 			  Card c = m_deck.GetCard();
 			  c.Show(true);
