@@ -15,14 +15,13 @@ public class Soft17HitStrategy implements IHitStrategy {
 		    };
 		for (Card c : a_dealer.GetHand()) {
 			c.Show(true);
-			if (!hasAce && c.GetValue() == Card.Value.Ace) {
+			if (c.GetValue() == Card.Value.Ace) {
 				hasAce = true;
-				score++;
-			} else {
+			} else if (c.GetValue() == Card.Value.Hidden); /* No-op */ else {
 				score += cardScores[c.GetValue().ordinal()];
 			}
 		}
-		return (hasAce && score == 7) || a_dealer.CalcScore() < g_hitLimit;
+		return (hasAce && score == 6) || a_dealer.CalcScore() < g_hitLimit;
 	}
 
 }
