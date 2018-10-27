@@ -1,5 +1,11 @@
 package BlackJack.model.rules;
 
+import BlackJack.model.Player;
+
 public interface IWinStrategy {
-	model.Player isWinner(model.Winner)
+	public class DealerWinsOnEqualStrategy {
+
+	}
+
+	boolean IsDealerWinner(Player a_player, Player a_dealer);
 }
