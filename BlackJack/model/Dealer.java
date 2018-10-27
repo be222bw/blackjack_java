@@ -49,10 +49,7 @@ public class Dealer extends Player {
   }
 
   public boolean IsGameOver() {
-    if (m_deck != null && !m_hitRule.DoHit(this)) {
-        return true;
-    }
-    return false;
+	return m_deck != null & !m_hitRule.DoHit(this);
   }
   public void Stand() {
 	  if (m_deck != null) {
