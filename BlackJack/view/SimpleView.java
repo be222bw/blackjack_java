@@ -62,8 +62,7 @@ public class SimpleView implements IView
             {
                 DisplayCard(c);
             }
-            System.out.println("Score: " + a_score);
-            System.out.println("");
+            System.out.println("Score: " + a_score + System.lineSeparator());
         }
 
         public void DisplayGameOver(boolean a_dealerIsWinner)
