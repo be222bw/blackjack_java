@@ -15,7 +15,7 @@ public class DealerOnEqualWinStrategy implements IWinStrategy {
 		    } else if (a_dealer.CalcScore() > g_maxScore) { // If the dealer busts...
 		      return false;
 		    }
-		return a_dealer.CalcScore() >= a_player.CalcScore(); // The dealer's score is greater than or eaqual to the player's score.
+		return a_dealer.CalcScore() >= a_player.CalcScore(); // The dealer's score is greater than or equal to the player's score.
 	}
 
 }
