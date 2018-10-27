@@ -2,6 +2,11 @@ package BlackJack.model.rules;
 
 import BlackJack.model.Player;
 
+/**
+ * The basic hit strategy.
+ * @author Unknown
+ *
+ */
 class BasicHitStrategy implements IHitStrategy {
     private final int g_hitLimit = 17;
 
