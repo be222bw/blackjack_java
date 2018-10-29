@@ -1,6 +1,9 @@
 package BlackJack.model;
 
 import java.util.List;
+import BlackJack.controller.IObserver;
+
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Player {
@@ -10,7 +13,6 @@ public class Player {
 
   public Player()
   {
-  
     m_hand = new LinkedList<Card>();
     System.out.println("Hello List World");
   }

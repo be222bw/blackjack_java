@@ -1,13 +1,15 @@
 package BlackJack.model;
 
+import BlackJack.controller.IObserver;
 import BlackJack.model.rules.*;
 
-public class Dealer extends Player {
+public class Dealer extends Player implements IObservable {
 
   private Deck m_deck;
   private INewGameStrategy m_newGameRule;
   private IHitStrategy m_hitRule;
   private IWinStrategy m_winRule;
+  private  IObserver m_observer;
 
   public Dealer(RulesFactory a_rulesFactory) {
   
@@ -38,6 +40,7 @@ public class Dealer extends Player {
       c = m_deck.GetCard();
       c.Show(true);
       a_player.DealCard(c);
+      notifyObservers();
       
       return true;
     }
@@ -61,5 +64,15 @@ public class Dealer extends Player {
 			  DealCard(c);
 		  }
 	  }
+  }
+  
+  @Override
+  public void setObserver(IObserver a_observer) {
+  	m_observer = a_observer;
+  }
+
+  @Override
+  public void notifyObservers() {
+	 m_observer.update(2000);
   }
 }

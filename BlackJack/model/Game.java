@@ -22,6 +22,10 @@ public class Game {
     return m_dealer.IsDealerWinner(m_player);
   }
   
+  public Dealer getDealer() {
+	  return m_dealer;
+  }
+  
   public boolean NewGame()
   {
     return m_dealer.NewGame(m_player);

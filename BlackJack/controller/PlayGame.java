@@ -4,9 +4,10 @@ import BlackJack.view.IView;
 import BlackJack.view.Action;
 import BlackJack.model.Game;
 
-public class PlayGame {
-
+public class PlayGame implements IObserver {
+	
   public boolean Play(Game a_game, IView a_view) {
+	a_game.getDealer().setObserver(this);
     a_view.DisplayWelcomeMessage();
     
     a_view.DisplayDealerHand(a_game.GetDealerHand(), a_game.GetDealerScore());
@@ -35,4 +36,16 @@ public class PlayGame {
     
     return input != Action.Quit;
   }
+  
+@Override
+public void update(int a_millis) {
+	try {
+		System.out.println("Waiting ...");
+		Thread.sleep(a_millis);
+	} catch (InterruptedException e) {
+		e.printStackTrace();
+		System.exit(-1);
+	}
+	
+}
 }
