@@ -29,15 +29,14 @@ public class Dealer extends Player implements IObservable {
   }
 
   public boolean Hit(Player a_player) {
-    if (m_deck != null && a_player.CalcScore() < g_maxScore && !IsGameOver()) {
-      Card c = m_deck.GetCard();
-      c.Show(true);
-      a_player.DealCard(c);
-      notifyObservers();
-      
-      return true;
-    }
-    return false;
+	  boolean shallHit = false;
+	  if (shallHit |= m_deck != null && a_player.CalcScore() < g_maxScore && !IsGameOver()) {
+		  Card c = m_deck.GetCard();
+		  c.Show(true);
+		  a_player.DealCard(c);
+		  notifyObservers();
+	  }
+	  return shallHit; // By using the bitwise OR in the if statement, shallHit can be assigned true.
   }
 
   public boolean IsDealerWinner(Player a_player) {
