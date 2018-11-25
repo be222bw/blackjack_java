@@ -40,7 +40,7 @@ public class PlayGame implements IObserver {
 @Override
 public void update(int a_millis) {
 	try {
-		System.out.println("Waiting ...");
+		System.out.println("*pause*");
 		Thread.sleep(a_millis);
 	} catch (InterruptedException e) {
 		e.printStackTrace();

@@ -1,9 +1,6 @@
 package BlackJack.model;
 
 import java.util.List;
-import BlackJack.controller.IObserver;
-
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Player {

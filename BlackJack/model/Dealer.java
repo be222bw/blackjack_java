@@ -35,7 +35,7 @@ public class Dealer extends Player implements IObservable {
   }
 
   public boolean Hit(Player a_player) {
-    if (m_deck != null && a_player.CalcScore() < g_maxScore && !IsGameOver()) {
+    if (m_deck != null && !IsGameOver()) {
       Card c;
       c = m_deck.GetCard();
       c.Show(true);
