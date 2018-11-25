@@ -40,19 +40,11 @@ public class Card {
   }
   
   public Color GetColor() {
-      if (m_isHidden)
-      {
-          return Color.Hidden;
-      }
-      return m_color;
+      return m_isHidden ? Color.Hidden : m_color;
   }
 
   public Value GetValue() {
-      if (m_isHidden)
-      {
-          return Value.Hidden;
-      }
-      return m_value;
+      return m_isHidden ? Value.Hidden : m_value;
   }
 
   public void Show(boolean a_show) {
