@@ -7,7 +7,7 @@ public class SimpleView implements IView
         {
           // for(int i = 0; i < 50; i++) {System.out.print(System.lineSeparator());}; Why?!
           System.out.println("Black Jack");
-          System.out.println("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit" + System.lineSeparator());
+          System.out.println("Type 'p' to play, 'h' to hit, 's' to stand or 'q' to quit." + System.lineSeparator());
         }
 
         public Action GetInput()
@@ -57,7 +57,7 @@ public class SimpleView implements IView
 
         private void DisplayHand(String a_name, Iterable<BlackJack.model.Card> a_hand, int a_score)
         {
-            System.out.println(a_name + " Has: ");
+            System.out.println(a_name + " has: ");
             for(BlackJack.model.Card c : a_hand)
             {
                 DisplayCard(c);

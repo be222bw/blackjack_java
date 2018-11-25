@@ -32,7 +32,7 @@ public class SwedishView implements IView
             } while (c == '\r' || c =='\n');
             return Action.Default;
           } catch (java.io.IOException e) {
-            System.err.println("" + e);
+            System.err.println(e.getLocalizedMessage());
             return Action.Default;
           }
         }
@@ -41,7 +41,7 @@ public class SwedishView implements IView
         {
             if (a_card.GetColor() == BlackJack.model.Card.Color.Hidden)
             {
-                System.out.println("Dolt Kort");
+                System.out.println("Dolt kort");
             }
             else
             {
@@ -62,10 +62,10 @@ public class SwedishView implements IView
         }
         public void DisplayGameOver(boolean a_dealerIsWinner)
         {
-            System.out.println("Slut: ");
+            System.out.println("Slut:");
             if (a_dealerIsWinner)
             {
-                System.out.println("Croupiern Vann!");
+                System.out.println("Croupiern vann!");
             }
             else
             {
@@ -75,7 +75,7 @@ public class SwedishView implements IView
 
         private void DisplayHand(String a_name, Iterable<BlackJack.model.Card> a_hand, int a_score)
         {
-            System.out.println(a_name + " Har: " + a_score);
+            System.out.println(a_name + " har: " + a_score);
             for(BlackJack.model.Card c : a_hand)
             {
                 DisplayCard(c);
