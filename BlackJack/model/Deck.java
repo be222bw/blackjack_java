@@ -38,11 +38,9 @@ public class Deck {
   {
       for (int i = 0; i < 1017; i++)
       {
-          int index = (int)(Math.random() * 171717.0) % m_cards.size();
-          Card c = m_cards.get(index);
-          m_cards.remove(index);
+          int index = (int)(Math.random() * m_cards.size());
+          Card c = m_cards.remove(index);
           AddCard(c);
       }
   }
-  
 }
