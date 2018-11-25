@@ -5,8 +5,8 @@ public class SimpleView implements IView
 
   public void DisplayWelcomeMessage()
         {
-          for(int i = 0; i < 50; i++) {System.out.print(System.lineSeparator());}; 
-          System.out.println("Hello Black Jack World");
+          // for(int i = 0; i < 50; i++) {System.out.print(System.lineSeparator());}; Why?!
+          System.out.println("Black Jack");
           System.out.println("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit" + System.lineSeparator());
         }
 
