@@ -12,8 +12,7 @@ public class Deck {
   
     for(int cIx = 0; cIx < Card.Color.Count.ordinal(); cIx++) {
       for (int vIx = 0; vIx < Card.Value.Count.ordinal(); vIx++) {
-        Card c = new Card(Card.Color.values()[cIx], Card.Value.values()[vIx]);
-        AddCard(c);
+        AddCard(new Card(Card.Color.values()[cIx], Card.Value.values()[vIx]));
       }
     }
     
