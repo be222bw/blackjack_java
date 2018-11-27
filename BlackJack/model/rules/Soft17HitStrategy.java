@@ -18,7 +18,7 @@ public class Soft17HitStrategy implements IHitStrategy {
 			hasAce |= v == Card.Value.Ace; // true | false == true, so if only one of the cards is ace, hasAce will remain true.
 			
 			if (v != Card.Value.Ace && v != Card.Value.Hidden) {
-				score += cardScores[c.GetValue().ordinal()];
+				score += cardScores[v.ordinal()];
 			}
 		}
 		return (hasAce && score == 6) || a_dealer.CalcScore() < g_hitLimit;
