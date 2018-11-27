@@ -14,10 +14,10 @@ public class Soft17HitStrategy implements IHitStrategy {
 		        2, 3, 4, 5, 6, 7, 8, 9, 10, 10 ,10 ,10, 11
 		    };
 		for (Card c : a_dealer.GetHand()) {
-			c.Show(true);
-			if (c.GetValue() == Card.Value.Ace) {
-				hasAce = true;
-			} else if (c.GetValue() == Card.Value.Hidden); /* No-op */ else {
+			Card.Value v = c.GetValue();
+			hasAce |= v == Card.Value.Ace; // true | false == true, so if only one of the cards is ace, hasAce will remain true.
+			
+			if (v != Card.Value.Ace && v != Card.Value.Hidden) {
 				score += cardScores[c.GetValue().ordinal()];
 			}
 		}
