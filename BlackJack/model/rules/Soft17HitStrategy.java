@@ -11,6 +11,6 @@ public class Soft17HitStrategy implements IHitStrategy {
 		for (Card c : a_dealer.GetHand()) {
 			hasAce |= c.GetValue() == Card.Value.Ace; // true | false == true.
 		}
-		return (hasAce && a_dealer.CalcScore() == 17) || a_dealer.CalcScore() < g_hitLimit;
+		return (hasAce && a_dealer.CalcScore() == g_hitLimit) || a_dealer.CalcScore() < g_hitLimit;
 	}
 }
