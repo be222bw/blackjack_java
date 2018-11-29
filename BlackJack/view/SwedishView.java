@@ -1,26 +1,30 @@
 package BlackJack.view;
 
-public class SwedishView implements IView 
-    {
-        public void DisplayWelcomeMessage()
-        {
+public class SwedishView implements IView
+{	
+	public SwedishView() {
+		
+	}
+	
+	public void DisplayWelcomeMessage()
+	{
             System.out.println("Black Jack");
             System.out.println("Skriv 'p' för att Spela, 'h' för nytt kort, 's' för att stanna 'q' för att avsluta." + System.lineSeparator());
-        }
+    }
         
-        public Action GetInput()
-        {
-          try {
-            int c;
-            do {c = System.in.read();
-            switch (c) {
-            case 'h':
-            case 'H':
-          	  return Action.Hit;
-            case 'p':
-            case 'P':
-          	  return Action.Play;
-            case 's':
+	public Action GetInput()
+    {
+		try {
+			int c;
+			do {c = System.in.read();
+			switch (c) {
+			case 'h':
+			case 'H':
+				return Action.Hit;
+	            case 'p':
+	            case 'P':
+	          	  return Action.Play;
+	        case 's':
             case 'S':
           	  return Action.Stand;
             case 'q':

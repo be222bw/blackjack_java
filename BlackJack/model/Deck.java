@@ -35,10 +35,10 @@ public class Deck {
   
   private void Shuffle()
   {
-      for (int i = 0; i < 1017; i++)
+      for (int i = 0; i <= 171717; i++)
       {
           int index = (int)(Math.random() * m_cards.size());
-          AddCard(m_cards.remove(index));
+          AddCard(m_cards.remove(index % m_cards.size()));
       }
   }
 }

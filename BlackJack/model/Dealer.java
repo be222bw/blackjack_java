@@ -1,15 +1,13 @@
 package BlackJack.model;
 
-import BlackJack.controller.IObserver;
 import BlackJack.model.rules.*;
 
-public class Dealer extends Player implements IObservable {
+public class Dealer extends Player {
 
   private Deck m_deck;
   private INewGameStrategy m_newGameRule;
   private IHitStrategy m_hitRule;
   private IWinStrategy m_winRule;
-  private  IObserver m_observer;
 
   public Dealer(RulesFactory a_rulesFactory) {
     m_newGameRule = a_rulesFactory.GetNewGameRule();
@@ -30,11 +28,10 @@ public class Dealer extends Player implements IObservable {
 
   public boolean Hit(Player a_player) {
 	  boolean shallHit = false;
-	  if (shallHit = m_deck != null && a_player.CalcScore() < g_maxScore && !IsGameOver()) {
+	  if (shallHit |= m_deck != null && a_player.CalcScore() < g_maxScore && !IsGameOver()) {
 		  Card c = m_deck.GetCard();
 		  c.Show(true);
 		  a_player.DealCard(c);
-		  notifyObservers();
 	  }
 	  return shallHit; // If the if statement is true, shallHit will be true.
   }
@@ -57,15 +54,5 @@ public class Dealer extends Player implements IObservable {
 			  DealCard(c);
 		  }
 	  }
-  }
-  
-  @Override
-  public void setObserver(IObserver a_observer) {
-  	m_observer = a_observer;
-  }
-
-  @Override
-  public void notifyObservers() {
-	 m_observer.update(2000);
   }
 }
