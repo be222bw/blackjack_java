@@ -1,21 +1,25 @@
 package BlackJack.model;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Player {
-
-  protected List<Card> m_hand;
-  protected final int g_maxScore = 21;
+	protected List<Card> m_hand;
+	protected final int g_maxScore = 21;
+	protected ArrayList<ICardDrawnObserver> m_observers;
 
   public Player()
   {
-    m_hand = new LinkedList<Card>();
+	  m_hand = new LinkedList<Card>();
+	  m_observers = new ArrayList<ICardDrawnObserver>();
+	  
   }
   
   public void DealCard(Card a_addToHand)
   {
-    m_hand.add(a_addToHand);
+	  m_hand.add(a_addToHand);
+	  notifySubscriber();
   }
   
   public Iterable<Card> GetHand()
@@ -68,5 +72,20 @@ public class Player {
     }
 
     return score;
+  }
+  
+  public void addSubscriber(ICardDrawnObserver a_obs) {
+	  m_observers.add(a_obs);
+  }
+  
+  public void notifySubscriber() {
+	  for (ICardDrawnObserver observer: m_observers) {
+	  observer.update();
+	  }
+	  
+  }
+  
+  public void removeSubscriber() {
+	  m_observers = null;
   }
 }

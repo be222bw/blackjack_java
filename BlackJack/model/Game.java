@@ -17,6 +17,10 @@ public class Game {
     return m_dealer.IsGameOver();
   }
   
+  public Player getPlayer() {
+	  return m_player;
+  }
+  
   public boolean IsDealerWinner()
   {
     return m_dealer.IsDealerWinner(m_player);
@@ -31,9 +35,9 @@ public class Game {
     m_dealer.NewGame(m_player);
   }
   
-  public boolean Hit()
+  public void Hit()
   {
-    return m_dealer.Hit(m_player);
+	  m_dealer.Hit(m_player);
   }
   
   public void Stand()
@@ -56,10 +60,8 @@ public class Game {
     return m_dealer.CalcScore();
   }
   
-  public int GetPlayerScore()
-  {
-    return m_player.CalcScore();
-  }
-    
-  
+  	public int GetPlayerScore()
+  	{
+	  return m_player.CalcScore();
+  	}
 }

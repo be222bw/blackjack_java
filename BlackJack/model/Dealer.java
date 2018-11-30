@@ -25,14 +25,12 @@ public class Dealer extends Player {
     }
   }
 
-  public boolean Hit(Player a_player) {
-	  boolean shallHit = false;
-	  if (shallHit = a_player.CalcScore() < g_maxScore && !IsGameOver()) {
+  public void Hit(Player a_player) {
+	  if (a_player.CalcScore() < g_maxScore && !IsGameOver()) {
 		  Card c = m_deck.GetCard();
 		  c.Show(true);
 		  a_player.DealCard(c);
 	  }
-	  return shallHit; // If the if statement is true, shallHit will be true.
   }
 
   public boolean IsDealerWinner(Player a_player) {
@@ -44,7 +42,8 @@ public class Dealer extends Player {
   }
   
   public void Stand() {
-	  if (m_deck != null) {
+	  // Whilst the sequence diagram said to check m_deck for null here, m_deck will never be null here, since it is initialised
+	  // in NewGame, and the deck cannot ever be emptied with just two players.
 		  ShowHand();
 		  
 		  while (m_hitRule.DoHit(this)) {
@@ -52,6 +51,5 @@ public class Dealer extends Player {
 			  c.Show(true);
 			  DealCard(c);
 		  }
-	  }
   }
 }

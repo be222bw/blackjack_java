@@ -1,6 +1,8 @@
 package BlackJack.view;
 
-public interface IView
+import BlackJack.model.ICardDrawnObserver;
+
+public interface IView extends ICardDrawnObserver
 {
   void DisplayWelcomeMessage();
   Action GetInput();

@@ -87,4 +87,15 @@ public class SwedishView implements IView
             System.out.println("Poäng: " + a_score);
             System.out.println("");
         }
+
+		@Override
+		public void update() {
+			try {
+				System.out.println("*paus*");
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+				System.exit(-1);
+			}
+		}
     }
