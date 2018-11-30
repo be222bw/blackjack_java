@@ -26,9 +26,9 @@ public class Game {
 	  return m_dealer;
   }
   
-  public boolean NewGame()
+  public void NewGame()
   {
-    return m_dealer.NewGame(m_player);
+    m_dealer.NewGame(m_player);
   }
   
   public boolean Hit()

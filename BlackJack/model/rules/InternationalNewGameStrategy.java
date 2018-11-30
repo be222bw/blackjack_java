@@ -7,7 +7,7 @@ import BlackJack.model.Card;
 
 class InternationalNewGameStrategy implements INewGameStrategy {
 
-  public boolean NewGame(Deck a_deck, Dealer a_dealer, Player a_player) {
+  public void NewGame(Deck a_deck, Dealer a_dealer, Player a_player) {
     Card c;
     Player[] participants= {a_player, a_dealer};
   
@@ -16,7 +16,5 @@ class InternationalNewGameStrategy implements INewGameStrategy {
         c.Show(true);
     	participants[i % 2].DealCard(c);
     }
-
-    return true;
   }
 }

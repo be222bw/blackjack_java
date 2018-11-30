@@ -16,14 +16,13 @@ public class Dealer extends Player {
   }
   
   
-  public boolean NewGame(Player a_player) {
+  public void NewGame(Player a_player) {
     if (m_deck == null || IsGameOver()) {
       m_deck = new Deck();
       ClearHand();
       a_player.ClearHand();
-      return m_newGameRule.NewGame(m_deck, this, a_player);   
+      m_newGameRule.NewGame(m_deck, this, a_player);   
     }
-    return false;
   }
 
   public boolean Hit(Player a_player) {
