@@ -5,6 +5,7 @@ import BlackJack.model.Player;
 
 public class Soft17HitStrategy implements IHitStrategy {
 	private final int g_hitLimit = 17;
+
 	@Override
 	public boolean DoHit(Player a_dealer) {
 		boolean hasAce = false;
