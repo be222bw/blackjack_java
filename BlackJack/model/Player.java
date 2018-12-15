@@ -52,7 +52,7 @@ public class Player {
 
 		if (score > g_maxScore) {
 			for (Card c : GetHand()) {
-				if (c.GetValue() == Card.Value.Ace && score > g_maxScore) {
+				if (c.GetValue() == Card.Value.Ace) {
 					score -= 10;
 				}
 			}
